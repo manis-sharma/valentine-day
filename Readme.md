@@ -228,10 +228,8 @@ Having issues? Here's how to get help:
 ## 🔗 Related Projects
 
 - [Impress Your Crush](http://github.com/manis-sharma/impress-your-crush)
-- [Love Calculator](#)
-- [Couple Photo Collage Maker](#)
-- [Anniversary Countdown Timer](#)
-
+- [Rose Day](https://github.com/manis-sharma/rose-day-)
+- [BirthDay Site](https://github.com/manis-sharma/birthday-site)
 ---
 
 ## 🏷️ Tags
@@ -249,7 +247,7 @@ Having issues? Here's how to get help:
 
 ## 💝 Made with Love
 
-Created with ❤️ for lovers around the world. May your Valentine's Day be filled with joy, love, and unforgettable moments!
+Created with ❤️ by [Manish Sharma](https://github.com/manis-sharma/) for lovers around the world. May your Valentine's Day be filled with joy, love, and unforgettable moments!
 
 **Happy Valentine's Day! 💕**
 
@@ -257,8 +255,10 @@ Created with ❤️ for lovers around the world. May your Valentine's Day be fil
 
 ### 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/manis-sharma/valentine-day?style=social)
-![GitHub forks](https://img.shields.io/github/forks/manis-sharma/valentine-day?style=social)
+![GitHub stars](https://img.shields.io/github/stars/manis-sharma/valentine-day?style=social),
+
+![GitHub forks](https://img.shields.io/github/forks/manis-sharma/valentine-day?style=social),
+
 ![GitHub watchers](https://img.shields.io/github/watchers/manis-sharma/valentine-day?style=social)
 
 ---
