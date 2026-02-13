@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Valentine's Day Love Letter - Interactive Romance Website | Special Gift for Your Love</title>
+    <meta name="title" content="Valentine's Day Love Letter - Interactive Romance Website | Special Gift for Your Love">
+    <meta name="description" content="Create a beautiful, interactive love letter website for Valentine's Day. Features elegant envelope animations, polaroid photo galleries, and romantic book designs. Perfect gift for your boyfriend, girlfriend, husband, or wife. Free romantic website template.">
+    <meta name="keywords" content="valentine's day, love letter, romantic website, valentine gift, interactive love letter, romantic gift, polaroid gallery, love website, valentine website, romance, couples gift, boyfriend gift, girlfriend gift, anniversary gift, romantic template, love confession">
+    <meta name="author" content="Valentine Love Letter Creator">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/manis-sharma/valantine-day">
+    <meta property="og:title" content="Valentine's Day Love Letter - Interactive Romance Website">
+    <meta property="og:description" content="Beautiful interactive love letter website with envelope animations, polaroid memories, and romantic designs. Perfect Valentine's Day gift!">
+    <meta property="og:image" content="https://github.com/manis-sharma/valantine-day/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Valentine Love Letter">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://github.com/manis-sharma/valantine-day/">
+    <meta name="twitter:title" content="Valentine's Day Love Letter - Interactive Romance Website">
+    <meta name="twitter:description" content="Beautiful interactive love letter website with envelope animations, polaroid memories, and romantic designs. Perfect Valentine's Day gift!">
+    <meta name="twitter:image" content="https://github.com/manis-sharma/valantine-day/preview.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://github.com/manis-sharma/valantine-day/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+   
+    <!--StyleSheet-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Valentine's Day Love Letter Website",
+      "description": "Interactive romantic website template for Valentine's Day with envelope animations, polaroid photo galleries, and elegant book designs. Perfect for expressing love to your partner.",
+      "url": "https://github.com/manis-sharma/valantine-day/",
+      "applicationCategory": "LifestyleApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Valentine Love Letter Creator"
+      },
+      "keywords": "valentine's day, love letter, romantic website, valentine gift, interactive love letter, romantic gift for boyfriend, romantic gift for girlfriend",
+      "featureList": [
+        "Interactive envelope animation",
+        "Polaroid photo gallery",
+        "Romantic book design",
+        "Mobile responsive",
+        "Easy to customize",
+        "Beautiful animations",
+        "Free to use"
+      ]
+    }
+    </script>
+   
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <!-- Page 1: Landing -->
+        <div class="page active" id="page1">
+            <div class="emoji-header">💚</div>
+            <h1>Hey Dear!</h1>
+            <p class="message">
+                I made something special just for you<br>
+                because <span class="highlight">you mean the world to me.</span>
+            </p>
+            <div class="btn-container">
+                <button class="btn" onclick="goToPage(2)">Open Your Gift 🎁</button>
+            </div>
+        </div>
+
+        <!-- Page 2: Choose Envelope -->
+        <div class="page" id="page2">
+            <h1>Choose an Envelope 💌</h1>
+            <p class="message">Explore the little things I love about us</p>
+            
+            <div class="envelope-grid">
+                <div class="envelope-card" onclick="goToPage(3)">
+                    <div class="envelope-icon">📝</div>
+                    <div class="envelope-title">Our Memories</div>
+                </div>
+                
+                <div class="envelope-card" onclick="goToPage(4)">
+                    <div class="envelope-icon">💝</div>
+                    <div class="envelope-title">My Letter</div>
+                </div>
+                
+                <div class="envelope-card" onclick="goToPage(5)">
+                    <div class="envelope-icon">💕</div>
+                    <div class="envelope-title">Why I Love You</div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="goToPage(1)">← Back</button>
+        </div>
+
+        <!-- Page 3: Our Memories -->
+        <div class="page" id="page3">
+            <h1>Our Best Moments 📸</h1>
+            <p class="message">The memories that made us, us</p>
+            
+            <!-- 
+                INSTRUCTIONS: Replace the src="..." values below with your actual image URLs
+                You can upload your photos to any image hosting service (Imgur, Google Drive, etc.)
+                and paste the direct image link in the src attribute
+            -->
+            
+            <div class="polaroid-grid">
+                <div class="polaroid">
+                    <div class="polaroid-image-container">
+                        <!-- Replace the src below with your first photo URL -->
+                        <img class="polaroid-image" src="https://via.placeholder.com/400x300/ff9a9e/ffffff?text=Memory+1" alt="Memory 1">
+                    </div>
+                    <div class="polaroid-caption">First Memory ✨</div>
+                </div>
+
+                <div class="polaroid">
+                    <div class="polaroid-image-container">
+                        <!-- Replace the src below with your second photo URL -->
+                        <img class="polaroid-image" src="https://via.placeholder.com/400x300/fecfef/ffffff?text=Memory+2" alt="Memory 2">
+                    </div>
+                    <div class="polaroid-caption">Second Memory 💕</div>
+                </div>
+
+                <div class="polaroid">
+                    <div class="polaroid-image-container">
+                        <!-- Replace the src below with your third photo URL -->
+                        <img class="polaroid-image" src="https://via.placeholder.com/400x300/f6d365/ffffff?text=Memory+3" alt="Memory 3">
+                    </div>
+                    <div class="polaroid-caption">Third Memory 🌟</div>
+                </div>
+
+                <div class="polaroid">
+                    <div class="polaroid-image-container">
+                        <!-- Replace the src below with your fourth photo URL -->
+                        <img class="polaroid-image" src="https://via.placeholder.com/400x300/a8edea/ffffff?text=Memory+4" alt="Memory 4">
+                    </div>
+                    <div class="polaroid-caption">Fourth Memory 💖</div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="goToPage(2)">← Back</button>
+        </div>
+
+        <!-- Page 4: My Letter -->
+        <div class="page" id="page4">
+            <h1>My Letter to You 💝</h1>
+            <p class="tap-hint">✨ Tap the envelope to open ✨</p>
+            
+            <div class="envelope-container">
+                <div class="envelope" id="envelope" onclick="toggleEnvelope()">
+                    <div class="envelope-wrapper">
+                        <div class="envelope-back"></div>
+                        <div class="letter">
+                            <div class="letter-content">
+                                <p>Dear Manish,</p>
+                                <p>Every moment with you feels like a dream come true. You have this incredible way of making even the ordinary feel extraordinary. Your smile lights up my world, and your laughter is my favorite sound.</p>
+                                <p>I want you to know that you are loved beyond measure. You are my comfort in chaos, my joy in sadness, and my hope in uncertainty. Thank you for being you, and thank you for choosing me.</p>
+                                <p>Here's to us, to our memories, and to all the beautiful moments yet to come.</p>
+                                <div class="letter-signature">Forever yours 💚</div>
+                            </div>
+                        </div>
+                        <div class="envelope-flap"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="goToPage(2)">← Back</button>
+        </div>
+
+        <!-- Page 5: Why I Love You -->
+        <div class="page" id="page5">
+            <h1>Why I Love You 💕</h1>
+            <p class="message">The pages of my heart...</p>
+            
+            <div class="book-container">
+                <div class="book">
+                    <div class="book-pages">
+                        <div class="reason-item">
+                            <div class="reason-number">1</div>
+                            <div class="reason-text">
+                                <div class="reason-title">Your Kindness</div>
+                                <div class="reason-description">The way you care for everyone around you shows me the beauty of your heart every single day.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item">
+                            <div class="reason-number">2</div>
+                            <div class="reason-text">
+                                <div class="reason-title">Your Smile</div>
+                                <div class="reason-description">It has the power to brighten my darkest days and fill my world with warmth and joy.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item">
+                            <div class="reason-number">3</div>
+                            <div class="reason-text">
+                                <div class="reason-title">Your Strength</div>
+                                <div class="reason-description">You face every challenge with courage and grace, inspiring me to be better every day.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item">
+                            <div class="reason-number">4</div>
+                            <div class="reason-text">
+                                <div class="reason-title">Your Humor</div>
+                                <div class="reason-description">You make me laugh in ways no one else can, turning ordinary moments into cherished memories.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item">
+                            <div class="reason-number">5</div>
+                            <div class="reason-text">
+                                <div class="reason-title">Simply Being You</div>
+                                <div class="reason-description">You don't have to try to be perfect because to me, you already are. I love you for everything you are.</div>
+                            </div>
+                        </div>
+
+                        <div class="book-footer">
+                            "In all the world, there is no heart for me like yours."
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="goToPage(2)">← Back</button>
+        </div>
+
+    </div>
+<!-- JavaScript -->
+ <script src="script.js"></script>
+</body>
+</html>

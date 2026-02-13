@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Main Page -->
+    <url>
+        <loc>https://YOUR-GITHUB-USERNAME.github.io/valentine-day/</loc>
+        <lastmod>2026-02-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://YOUR-GITHUB-USERNAME.github.io/valentine-day/preview.png</image:loc>
+            <image:title>Valentine's Day Love Letter Website</image:title>
+            <image:caption>Interactive romantic website template for Valentine's Day</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Index Page (if different from main) -->
+    <url>
+        <loc>https://YOUR-GITHUB-USERNAME.github.io/valentine-day/index.html</loc>
+        <lastmod>2026-02-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+</urlset>

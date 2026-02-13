@@ -1,0 +1,55 @@
+# Jekyll Configuration for GitHub Pages
+
+# Site Settings
+title: "Valentine's Day Love Letter Website"
+description: "Beautiful interactive love letter website with envelope animations, polaroid gallery & romantic designs. Perfect gift for your loved one!"
+url: "https://github.com/manis-sharma/valantine-day"
+
+# SEO Settings
+lang: en_US
+author: "Valentine Love Letter Creator"
+twitter:
+  username: @manishsharmadev
+  card: summary_large_image
+
+# Social Links (update with your social media)
+social:
+  name: Valentine Love Letter
+  links:
+    - https://github.com/manis-sharma/valentine-day
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Theme
+theme: null
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - CONTRIBUTING.md
+  - SETUP_INSTRUCTIONS.md
+  - GITHUB_TOPICS.txt
+  - DESCRIPTION.txt
+  - .gitattributes
+  - .github/
+
+# Include files
+include:
+  - _redirects
+  - robots.txt
+  - sitemap.xml
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Sass/SCSS settings
+sass:
+  style: compressed

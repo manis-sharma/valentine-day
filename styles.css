@@ -1,0 +1,561 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #78f9ce 0%, #fd96e5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .page {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: none;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .emoji-header {
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .message {
+            color: #333;
+            font-size: 1.3em;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Step 2 - Envelope Selection */
+        .envelope-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .envelope-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .envelope-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .envelope-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .envelope-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .envelope-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .envelope-title {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+            color: #333;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Step 3 - Memories Gallery */
+        .polaroid-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            transform: rotate(0deg);
+            animation: fadeInPolaroid 0.6s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .polaroid:nth-child(1) { 
+            transform: rotate(-3deg); 
+            animation-delay: 0.1s;
+        }
+        .polaroid:nth-child(2) { 
+            transform: rotate(2deg);
+            animation-delay: 0.3s;
+        }
+        .polaroid:nth-child(3) { 
+            transform: rotate(3deg);
+            animation-delay: 0.5s;
+        }
+        .polaroid:nth-child(4) { 
+            transform: rotate(-2deg);
+            animation-delay: 0.7s;
+        }
+
+        @keyframes fadeInPolaroid {
+            from {
+                opacity: 0;
+                transform: translateY(30px) rotate(0deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(var(--rotation, 0deg)) scale(1);
+            }
+        }
+
+        .polaroid:nth-child(1) {
+            --rotation: -3deg;
+        }
+        .polaroid:nth-child(2) {
+            --rotation: 2deg;
+        }
+        .polaroid:nth-child(3) {
+            --rotation: 3deg;
+        }
+        .polaroid:nth-child(4) {
+            --rotation: -2deg;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.1) translateY(-10px) !important;
+            z-index: 10;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .polaroid-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: #f9f9f9;
+        }
+
+        .polaroid-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .polaroid:hover .polaroid-image {
+            transform: scale(1.1);
+        }
+
+        .polaroid-caption {
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
+            font-size: 1.2em;
+            color: #555;
+            font-weight: 600;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Love Letter - Envelope Animation */
+        .envelope-container {
+            perspective: 1000px;
+            margin-top: 50px;
+        }
+
+        .envelope {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 70%;
+        }
+
+        .envelope-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+            transform-origin: top;
+            transition: transform 0.6s ease;
+            border-radius: 10px 10px 0 0;
+            clip-path: polygon(0 0, 50% 60%, 100% 0);
+            z-index: 3;
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(-180deg);
+        }
+
+        .letter {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 90%;
+            background: #fffef7;
+            border-radius: 5px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease;
+            transform: translateY(0);
+            overflow-y: auto;
+            z-index: 2;
+        }
+
+        .envelope.open .letter {
+            transform: translateY(-120%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .letter-content {
+            font-family: 'Georgia', serif;
+            color: #333;
+            line-height: 2;
+            font-size: 1.05em;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+
+        .tap-hint {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Why I Love You - Book Style */
+        .book-container {
+            margin-top: 50px;
+            perspective: 2000px;
+        }
+
+        .book {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #8b4513;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .book::before {
+            content: '💕';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            opacity: 0.1;
+        }
+
+        .book-pages {
+            background: #fffef7;
+            padding: 50px 40px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 500px;
+            position: relative;
+        }
+
+        .book-pages::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .reason-item {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            display: flex;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .reason-item:nth-child(1) { animation-delay: 0.1s; }
+        .reason-item:nth-child(2) { animation-delay: 0.3s; }
+        .reason-item:nth-child(3) { animation-delay: 0.5s; }
+        .reason-item:nth-child(4) { animation-delay: 0.7s; }
+        .reason-item:nth-child(5) { animation-delay: 0.9s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reason-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .reason-text {
+            flex: 1;
+        }
+
+        .reason-title {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .reason-description {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .book-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .message {
+                font-size: 1.1em;
+            }
+
+            .envelope-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emoji-header {
+                font-size: 40px;
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+ 
